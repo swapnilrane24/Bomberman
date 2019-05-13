@@ -38,11 +38,15 @@ namespace PlayerSystem
             }
         }
 
-        public void DestroyPlayer()
+        public void PlayerKilled()
         {
             Object.Destroy(playerView.gameObject);
-            playerService.DestroyPlayer();
+            playerService.PlayerKilled();
         }
 
+        public void PlayerDestroy()
+        {
+            Object.Destroy(playerView.gameObject);
+        }
     }
 }

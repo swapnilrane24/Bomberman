@@ -52,7 +52,7 @@ namespace PlayerSystem
             myBody.velocity = new Vector2(horizontalVal, verticalVal) * moveSpeed;
         }
 
-        public void Damage() => playerController.DestroyPlayer();
+        public void Damage() => playerController.PlayerKilled();
 
         public void SetController(PlayerController playerController) =>
             this.playerController = playerController;

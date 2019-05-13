@@ -16,6 +16,9 @@ namespace Common
         public event Action updateScore;
         public event Action restartGame;
 
+        [Range(3,10)]
+        public int enemyCount;
+        public Vector2 gridSize;
         public UIController uiController;
         public EnemyController enemyPrefab;
         public BombController bombPrefab;
@@ -59,7 +62,6 @@ namespace Common
         public void RestartGame()
         {
             restartGame?.Invoke();
-            levelService.GenerateLevel();
         }
 
     }

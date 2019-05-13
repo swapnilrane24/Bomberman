@@ -32,6 +32,7 @@ namespace UISystem
         // Start is called before the first frame update
         void Start()
         {
+            SetUI();
             DontDestroyOnLoad(gameObject);
             restartBtn.onClick.AddListener(RestartGame);
         }
@@ -52,11 +53,16 @@ namespace UISystem
 
         void RestartGame()
         {
+            SetUI();
+            serviceManager.RestartGame();
+        }
+
+        void SetUI()
+        {
             score = 000;
             scoreText.text = "SCORE: " + score;
             gamePanel.SetActive(true);
             gameOverPanel.SetActive(false);
-            serviceManager.RestartGame();
         }
 
     }

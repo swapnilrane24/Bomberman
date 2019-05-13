@@ -57,7 +57,6 @@ namespace EnemySystem
             {
                 //TODO: fire game won event
                 serviceManager.SetGameStatus(true);
-                Debug.Log("Won Game");
                 return;
             }
         }

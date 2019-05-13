@@ -12,7 +12,7 @@ namespace LevelSystem
         public GameObject[,] gridArray;
         private List<Vector2> emptyGridList;
         private int edgeCount = 2;
-        private int gridWidth = 15, gridHeight = 11;
+        private int gridWidth = 15, gridHeight = 11, enemyCount;
 
         private FixedBlocks fixedBlockPref;
         private BreakableBlocks breakableBlockPref;
@@ -31,6 +31,9 @@ namespace LevelSystem
             this.levelService = levelService;
             this.fixedBlockPref = fixedBlockPrefab;
             this.breakableBlockPref = breakableBlockPrefab;
+            gridWidth = (int)ServiceManager.singleton.gridSize.x;
+            gridHeight = (int)ServiceManager.singleton.gridSize.y;
+            enemyCount = ServiceManager.singleton.enemyCount;
             ServiceManager.singleton.restartGame += RestartGame;
         }
 
@@ -55,6 +58,8 @@ namespace LevelSystem
             }
 
             gridArray = null;
+
+            GenerateLevel();
         }
 
         public void GenerateLevel()
@@ -163,7 +168,7 @@ namespace LevelSystem
 
         void SpawnEnemies()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < enemyCount; i++)
             {
                 int k = Random.Range(0, emptyGridList.Count);
                 Vector2 vector = emptyGridList[k];

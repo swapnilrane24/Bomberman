@@ -408,6 +408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce89fb0aa69b4977bbae8f1fd713c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCount: 5
+  gridSize: {x: 15, y: 11}
   uiController: {fileID: 311960149}
   enemyPrefab: {fileID: 315681387314900423, guid: 75cfabcce161346c9acfbd338eeac931,
     type: 3}
@@ -568,7 +570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1068163879
 RectTransform:
   m_ObjectHideFlags: 0
@@ -935,7 +937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -59, y: 0}
+  m_AnchoredPosition: {x: -59, y: -13}
   m_SizeDelta: {x: 372.3, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1735597650

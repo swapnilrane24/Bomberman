@@ -34,7 +34,6 @@ namespace EnemySystem
             {
                 StartCoroutine(CheckIfCaged()); 
             }
-            Debug.Log(canMove);
         }
 
         public void SetServices(ILevelService levelService, EnemyService enemyService)

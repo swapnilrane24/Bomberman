@@ -17,6 +17,12 @@ namespace PlayerSystem
             this.serviceManager = serviceManager;
             this.playerPrefab = playerPrefab;
             this.bombPrefab = bombPrefab;
+            serviceManager.restartGame += RestartGame;
+        }
+
+        ~PlayerService()
+        {
+            serviceManager.restartGame -= RestartGame;
         }
 
         public void SpawnPlayer(Vector2 spawnPos)
@@ -25,11 +31,20 @@ namespace PlayerSystem
             levelService);
         }
 
-        public void DestroyPlayer()
+        public void PlayerKilled()
         {
             //TODO: fire game lost event
             serviceManager.SetGameStatus(false);
             playerController = null; 
+        }
+
+        void RestartGame()
+        {
+            if (playerController != null)
+            {
+                playerController.PlayerDestroy();
+                playerController = null;
+            }
         }
 
         public GameObject GetPlayer()
