@@ -2,7 +2,7 @@
 Remake of Bomberman game in Unity with C#
 
 # How To Play
-Use AWSD keys to move
+Use AWSD keys to move.
 Use spacebar to plant the bomb
 
 # Game Goal
