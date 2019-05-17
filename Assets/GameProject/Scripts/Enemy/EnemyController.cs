@@ -17,6 +17,7 @@ namespace EnemySystem
         EnemyService enemyService;
         [SerializeField] private Transform enemySprite;
         bool canMove, isCaged = true;
+        WaitForSeconds waitTime = new WaitForSeconds(1f);
 
         // Start is called before the first frame update
         void Start()
@@ -32,7 +33,7 @@ namespace EnemySystem
             }
             else
             {
-                StartCoroutine(CheckIfCaged()); 
+                StartCoroutine(CheckIfCaged());
             }
         }
 
@@ -106,7 +107,7 @@ namespace EnemySystem
 
         IEnumerator CheckIfCaged()
         {
-            yield return new WaitForSeconds(1f);
+            yield return waitTime;
 
             if(CanMove())
             {
